@@ -124,7 +124,7 @@ FROM machines;
 +----------+----------+------------+------------+---------+-----------------+---------+
 200 rows in set (0.001 sec)
 
-Task 3. Investigate login activity
+Task 2. Investigate login activity
 In this task, you need to analyze the information from the log_in_attempts table to determine if any unusual activity has occurred.
 
 First, you need to investigate the locations where login attempts were made to ensure that they’re in expected areas (the United States, Canada, or Mexico).
