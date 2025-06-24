@@ -1,3 +1,24 @@
+Perform SQL Query Lab
+
+
+In this scenario, you have to determine which employee devices must be updated. You also need to investigate user login activity to explore if any unusual activity has occurred.
+
+The information you need is located in the machines and login_attempts tables in the organization database.
+
+Here’s how you’ll do this task: First, you’ll obtain information on the employee devices that must be updated. Next, you’ll examine the login attempts for unusual activity. Finally, you’ll use the ORDER BY keyword to sort the data returned by your SQL queries.
+
+OK, let’s get ready to practice running your very first SQL queries!
+
+
+Task 1. Retrieve employee device data
+In this task, you need to obtain information on employee devices because your team needs to update them. The information you need is in the machines table in the organization database.
+
+First, you need to retrieve all the information about the employee devices.
+
+Run the following query to select all device information from the machines table:
+
+SELECT *
+FROM machines;
 
 |      100 | tmitchel | 2022-05-12 | 16:02:03   | MEXICO  | 192.168.97.225  |       0 |
 |      101 | sbaelish | 2022-05-08 | 12:01:22   | US      | 192.168.145.158 |       0 |
@@ -102,6 +123,14 @@
 |      200 | jclark   | 2022-05-12 | 01:11:45   | CANADA  | 192.168.91.103  |       1 |
 +----------+----------+------------+------------+---------+-----------------+---------+
 200 rows in set (0.001 sec)
+
+Task 3. Investigate login activity
+In this task, you need to analyze the information from the log_in_attempts table to determine if any unusual activity has occurred.
+
+First, you need to investigate the locations where login attempts were made to ensure that they’re in expected areas (the United States, Canada, or Mexico).
+
+Write a SQL query to select the event_id and country columns from the log_in_attempts table.
+
 
 MariaDB [organization]> SELECT *
     -> FROM log_in_attempts
@@ -311,6 +340,17 @@ MariaDB [organization]> SELECT *
 |      141 | btang    | 2022-05-12 | 10:12:03   | USA     | 192.168.82.139  |       0 |
 +----------+----------+------------+------------+---------+-----------------+---------+
 200 rows in set (0.021 sec)
+
+
+Task 3. Order login attempts data
+In this task, you need to use the ORDER BY keyword. You'll sequence the data that your query returns according to the login date and time.
+
+First, you need to sort the information by date.
+
+Run the following query, which orders log_in_attempts data by login_date:
+SELECT *
+FROM log_in_attempts
+ORDER BY login_date;
 
 MariaDB [organization]> SELECT * FROM log_in_attempts ORDER BY login_date, login_time;
 +----------+----------+------------+------------+---------+-----------------+---------+
